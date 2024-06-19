@@ -38,7 +38,8 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>choisir une date</mat-label>
-      <input matInput [matDatepicker]="picker" />
+      <input matInput [matDatepicker]="picker"
+       [max]="maxDate"/>
       <mat-hint>JJ/MM/AAAA</mat-hint>
       <mat-datepicker-toggle
         matIconSuffix

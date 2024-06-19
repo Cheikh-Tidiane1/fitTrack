@@ -1,31 +1,37 @@
-import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule} from '@angular/material/button';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, NgForm } from '@angular/forms';
-import {provideNativeDateAdapter} from '@angular/material/core';
+import { provideNativeDateAdapter } from '@angular/material/core';
 @Component({
   selector: 'app-signup',
   standalone: true,
   providers: [provideNativeDateAdapter()],
-  imports: [MatSelectModule,MatInputModule,MatFormFieldModule,FlexLayoutModule,MatButtonModule,FormsModule,MatDatepickerModule],
+  imports: [
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    FormsModule,
+    MatDatepickerModule,
+  ],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.css',
 })
 export class SignupComponent implements OnInit {
-
-  constructor(){
-
+  maxDate: Date;
+  constructor() {}
+  ngOnInit() {
+    this.maxDate = new Date();
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-  }
 
-  onSubmit(form: NgForm){
+  onSubmit(form: NgForm) {
     console.log(form.value);
   }
-
 }
