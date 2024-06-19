@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, NgForm } from '@angular/forms';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @Component({
   selector: 'app-signup',
   standalone: true,
@@ -19,6 +20,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     MatButtonModule,
     FormsModule,
     MatDatepickerModule,
+    MatCheckboxModule
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
