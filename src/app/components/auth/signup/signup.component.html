@@ -19,7 +19,7 @@
       @if(emInput.hasError('required')){
       <mat-error>Veuillez remplir le champ</mat-error>
       }@else if (emInput.hasError('required') != true) {
-        <mat-error>Email invalide</mat-error>
+      <mat-error>Email invalide</mat-error>
       }
     </mat-form-field>
     <mat-form-field hintLabel="Minimum 6 caractères">
@@ -36,6 +36,17 @@
       <mat-hint align="end">{{ pwInput.value?.length }} /6</mat-hint>
       <mat-error>Minimum 6 caractères</mat-error>
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>choisir une date</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-hint>JJ/MM/AAAA</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
     <button type="submit" mat-raised-button color="primary">Connexion</button>
   </form>
 </section>
