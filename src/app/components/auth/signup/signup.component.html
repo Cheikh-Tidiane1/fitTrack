@@ -4,6 +4,7 @@
     (ngSubmit)="onSubmit(f)"
     fxLayoutAlign="center center"
     #f="ngForm"
+    fxLayoutGap="10px"
   >
     <mat-form-field>
       <mat-label>Votre email</mat-label>
@@ -38,8 +39,14 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>choisir une date</mat-label>
-      <input matInput [matDatepicker]="picker"
-       [max]="maxDate" ngModel name="date" required=""/>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [max]="maxDate"
+        ngModel
+        name="date"
+        required=""
+      />
       <mat-hint>JJ/MM/AAAA</mat-hint>
       <mat-datepicker-toggle
         matIconSuffix
@@ -47,7 +54,21 @@
       ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <mat-checkbox class="example-margin" ngModel name="Accepter" color="primary" required="">Accepter les termes et conditions</mat-checkbox>
-    <button type="submit" mat-raised-button color="primary">Connexion</button>
+    <mat-checkbox
+      class="example-margin"
+      ngModel
+      name="Accepter"
+      color="primary"
+      required=""
+      >Accepter les termes et conditions</mat-checkbox
+    >
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="!f.valid"
+    >
+      Connexion
+    </button>
   </form>
 </section>
