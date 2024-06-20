@@ -3,6 +3,16 @@ mat-form-field {
 }
 
 form {
-    height: 70vh;
-    /* background: salmon; */
+    height: 90vh;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.logo img{
+    width: 100%;
+    height: auto;
 }
